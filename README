@@ -6,13 +6,13 @@ close to them.
 
 
 Usage
-=====
+-----
 
 The system activates itself, you just need to add the mod to the subgame.
 
 
 Configuration
-=============
+-------------
 
 The system can be configured by adding settings to the `minetest.conf`:
 
