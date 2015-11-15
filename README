@@ -1,0 +1,56 @@
+minetest-australopithecus-auto-pickup
+====================================+
+
+A system which allows players to automatically pick up items by just walking
+close to them.
+
+
+Usage
+=====
+
+The system activates itself, you just need to add the mod to the subgame.
+
+
+Configuration
+=============
+
+The system can be configured by adding settings to the `minetest.conf`:
+
+    # If the system should be activated, defaults to true.
+    autopickup_activate = true.
+    
+    # The acceleration that is used when the object enters the acceleration
+    # radius, defaults to "2, 0, 2". This is has three values, x, y and z.
+    autopickup_attraction_acceleration = 2, 0, 2
+    
+    # The radius within which items are moved towards the player, defaults
+    # to 1.5.
+    autopickup_attraction_radius = 1.5
+    
+    # The minimum age (in seconds) which a dropped item must have before it can
+    # be automatically picked up by the same player again, defaults to 4.
+    autopickup_dropped_min_age = 4
+    
+    # The interval (in seconds) in which the system is running, defaults to 0.1.
+    autopickup_interval = 0.1
+    
+    # The radius within which items are picked up, meaning added to the players
+    # inventory, defaults to 0.9.
+    autopickup_pickup_radius = 0.9
+    
+    # If a sound should be played when an item is picked up, defaults to true.
+    autopickup_sound_enabled = true
+    
+    # The sound gain of the sound that is played, defaults to 0.5.
+    autopickup_sound_gain = 0.5
+    
+    # If the sound should be hearable by other players, defaults to true.
+    autopickup_sound_global = true
+    
+    # If autopickup_sound_global is set to true, defines the hearing distance,
+    # defaulst to 8.
+    autopickup_sound_hear_distance = 8
+    
+    # The name of the sound files to play, defaults to "auto_pickup".
+    autopickup_sound_name = auto_pickup
+

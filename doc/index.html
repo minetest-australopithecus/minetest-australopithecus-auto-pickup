@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><strong>autopickup</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>autopickup</code></h1>
+<p>A system which allows to automatically pickup items which are on the ground.</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#activate">activate ()</a></td>
+	<td class="summary">Activates the system, if it has not been disabled by setting
+ "autopickup_activate" to false in the configuration.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#has_just_been_dropped_by">has_just_been_dropped_by (entity, player)</a></td>
+	<td class="summary">Checks if the given entity has just been dropped by the given player within
+ the configured time.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#move_towards">move_towards (object, target_pos)</a></td>
+	<td class="summary">Moves the given object towards the given location with the given velocity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#pickup_items">pickup_items (player)</a></td>
+	<td class="summary">Processes all items in the vicinity of the given player.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#pickup_items_all">pickup_items_all ()</a></td>
+	<td class="summary">Processes all players and picks up the items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#play_sound">play_sound (position, player)</a></td>
+	<td class="summary">Plays the configured sound at the given position.</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#attraction_acceleration">attraction_acceleration</a></td>
+	<td class="summary">The acceleration that is used when the item enters the attraction
+ radius, defaults to "2, 0, 2".</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#attraction_radius">attraction_radius</a></td>
+	<td class="summary">The radius within which items are moved towards the player, defaults
+ to 1.5.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dropped_min_age">dropped_min_age</a></td>
+	<td class="summary">The minimum age (in seconds) before dropped items can be picked up
+ automatically again by the same player, defaults to 4.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#interval">interval</a></td>
+	<td class="summary">The interval (in seconds) in which the system is running, defaults
+ to 0.1.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#pickup_radius">pickup_radius</a></td>
+	<td class="summary">The radius within which items are picked up, defaults to 0.9.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sound_enabled">sound_enabled</a></td>
+	<td class="summary">If the sound should be played, defaults to true.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sound_gain">sound_gain</a></td>
+	<td class="summary">The gain of the sound played, defaults to 0.5.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sound_global">sound_global</a></td>
+	<td class="summary">If the sound be played globally, defaults to true.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sound_hear_distance">sound_hear_distance</a></td>
+	<td class="summary">If the global playing is set, this defines the hearing distance,
+ defaults to 8.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#sound_name">sound_name</a></td>
+	<td class="summary">The name of the sound to play, defaults to "auto_pickup".</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "activate"></a>
+    <strong>activate ()</strong>
+    </dt>
+    <dd>
+    Activates the system, if it has not been disabled by setting
+ "autopickup_activate" to false in the configuration.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "has_just_been_dropped_by"></a>
+    <strong>has_just_been_dropped_by (entity, player)</strong>
+    </dt>
+    <dd>
+    Checks if the given entity has just been dropped by the given player within
+ the configured time.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entity</span>
+         The LuaEntity to check.
+        </li>
+        <li><span class="parameter">player</span>
+         The Player object.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the given entity has just been dropped by the given player.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "move_towards"></a>
+    <strong>move_towards (object, target_pos)</strong>
+    </dt>
+    <dd>
+    Moves the given object towards the given location with the given velocity.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">object</span>
+         The object to move.
+        </li>
+        <li><span class="parameter">target_pos</span>
+         The target position.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "pickup_items"></a>
+    <strong>pickup_items (player)</strong>
+    </dt>
+    <dd>
+    Processes all items in the vicinity of the given player.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">player</span>
+         The player object.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "pickup_items_all"></a>
+    <strong>pickup_items_all ()</strong>
+    </dt>
+    <dd>
+    Processes all players and picks up the items.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "play_sound"></a>
+    <strong>play_sound (position, player)</strong>
+    </dt>
+    <dd>
+    Plays the configured sound at the given position.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+         The position at which to play the sound.
+        </li>
+        <li><span class="parameter">player</span>
+         The player to who to play the sound, if configured to do so.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Fields"></a>Fields</h2>
+    <dl class="function">
+    <dt>
+    <a name = "attraction_acceleration"></a>
+    <strong>attraction_acceleration</strong>
+    </dt>
+    <dd>
+    The acceleration that is used when the item enters the attraction
+ radius, defaults to "2, 0, 2".
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "attraction_radius"></a>
+    <strong>attraction_radius</strong>
+    </dt>
+    <dd>
+    The radius within which items are moved towards the player, defaults
+ to 1.5.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dropped_min_age"></a>
+    <strong>dropped_min_age</strong>
+    </dt>
+    <dd>
+    The minimum age (in seconds) before dropped items can be picked up
+ automatically again by the same player, defaults to 4.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "interval"></a>
+    <strong>interval</strong>
+    </dt>
+    <dd>
+    The interval (in seconds) in which the system is running, defaults
+ to 0.1.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "pickup_radius"></a>
+    <strong>pickup_radius</strong>
+    </dt>
+    <dd>
+    The radius within which items are picked up, defaults to 0.9.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "sound_enabled"></a>
+    <strong>sound_enabled</strong>
+    </dt>
+    <dd>
+    If the sound should be played, defaults to true.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "sound_gain"></a>
+    <strong>sound_gain</strong>
+    </dt>
+    <dd>
+    The gain of the sound played, defaults to 0.5.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "sound_global"></a>
+    <strong>sound_global</strong>
+    </dt>
+    <dd>
+    If the sound be played globally, defaults to true.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "sound_hear_distance"></a>
+    <strong>sound_hear_distance</strong>
+    </dt>
+    <dd>
+    If the global playing is set, this defines the hearing distance,
+ defaults to 8.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "sound_name"></a>
+    <strong>sound_name</strong>
+    </dt>
+    <dd>
+    The name of the sound to play, defaults to "auto_pickup".
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
