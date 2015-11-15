@@ -47,7 +47,7 @@ autopickup = {
 	pickup_radius = settings.get_number("autopickup_pickup_radius", 0.9),
 	
 	--- If the sound should be played, defaults to true.
-	sound_enabled = setting.get_bool("autopickup_sound_enabled", true),
+	sound_enabled = settings.get_bool("autopickup_sound_enabled", true),
 	
 	--- The gain of the sound played, defaults to 0.5.
 	sound_gain = settings.get_number("autopickup_sound_gain", 0.5),
