@@ -17,7 +17,7 @@ Configuration
 The system can be configured by adding settings to the `minetest.conf`:
 
     # If the system should be activated, defaults to true.
-    autopickup_activate = true.
+    autopickup_activate = true
     
     # The acceleration that is used when the object enters the acceleration
     # radius, defaults to "2, 0, 2". This is has three values, x, y and z.
