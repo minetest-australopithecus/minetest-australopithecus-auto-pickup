@@ -5,6 +5,20 @@ A system which allows players to automatically pick up items by just walking
 close to them.
 
 
+Features
+--------
+
+ * Items are first attracted and if close enough automatically added to
+   the inventory.
+ * Items are only attracted if there is enough space in the inventory to
+   actually pick them up.
+ * If items are dropped, there can only be picked up automatically after
+   a certain time, means you can drop items without picking them right again.
+ * Picking up an item makes a sound, which can either be only for the player
+   or can be heard by all players.
+ * Completely configurable from the tyhe configuration.
+
+
 Usage
 -----
 
