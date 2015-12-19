@@ -68,3 +68,18 @@ The system can be configured by adding settings to the `minetest.conf`:
     # The name of the sound files to play, defaults to "auto_pickup".
     autopickup_sound_name = auto_pickup
 
+
+Run manually
+------------
+
+You can run the system manually, either for all players by invoking
+`autopickup.pickup_items_all`, or for a single player by invoking
+`autopickup.pickup_items` with accepts the player as the single argument.
+
+
+Force activation
+----------------
+
+You can force the activation of the system, even if it has been disable in
+the configuration, by invoking `autopickup.activate_internal`.
+
