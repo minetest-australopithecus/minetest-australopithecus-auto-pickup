@@ -78,6 +78,8 @@ function autopickup.activate()
 	end
 end
 
+--- Activates the system, without checking the configuration. Multiple calls
+-- to this function have no effect.
 function autopickup.activate_internal()
 	if not autopickup.active then
 		scheduler.schedule(
