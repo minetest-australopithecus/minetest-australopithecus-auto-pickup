@@ -27,6 +27,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 --- A system which allows to automatically pickup items which are on the ground.
 autopickup = {
+	--- If the system should be automatically activated.
+	activate = settings.get_bool("autopickup_activate", true),
+	
+	--- If the system is active/has been activated.
+	active = false,
+	
 	--- The acceleration that is used when the item enters the attraction
 	-- radius, defaults to "2, 0, 2".
 	attraction_acceleration = settings.get_pos3d("autopickup_attraction_acceleration", { x = 2, y = 0, z = 2 }),
@@ -67,12 +73,20 @@ autopickup = {
 --- Activates the system, if it has not been disabled by setting
 -- "autopickup_activate" to false in the configuration.
 function autopickup.activate()
-	if settings.get_bool("autopickup_activate", true) then
+	if autopickup.activate then
+		autopickup.activate_internal()
+	end
+end
+
+function autopickup.activate_internal()
+	if not autopickup.active then
 		scheduler.schedule(
-			"auto_pickup",
+			"autopickup",
 			autopickup.interval,
 			autopickup.pickup_items_all,
 			scheduler.OVERSHOOT_POLICY_RUN_ONCE)
+		
+		autopickup.active = true
 	end
 end
 
