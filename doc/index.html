@@ -56,6 +56,10 @@
  "autopickup_activate" to false in the configuration.</td>
 	</tr>
 	<tr>
+	<td class="name" nowrap><a href="#activate_internal">activate_internal ()</a></td>
+	<td class="summary">Activates the system, without checking the configuration.</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#has_just_been_dropped_by">has_just_been_dropped_by (entity, player)</a></td>
 	<td class="summary">Checks if the given entity has just been dropped by the given player within
  the configured time.</td>
@@ -80,7 +84,7 @@
 <h2><a href="#Fields">Fields</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#activate">activate</a></td>
+	<td class="name" nowrap><a href="#activate_automatically">activate_automatically</a></td>
 	<td class="summary">If the system should be automatically activated.</td>
 	</tr>
 	<tr>
@@ -147,6 +151,21 @@
     <dd>
     Activates the system, if it has not been disabled by setting
  "autopickup_activate" to false in the configuration.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "activate_internal"></a>
+    <strong>activate_internal ()</strong>
+    </dt>
+    <dd>
+    Activates the system, without checking the configuration.  Multiple calls
+ to this function have no effect.
 
 
 
@@ -268,8 +287,8 @@
     <h2><a name="Fields"></a>Fields</h2>
     <dl class="function">
     <dt>
-    <a name = "activate"></a>
-    <strong>activate</strong>
+    <a name = "activate_automatically"></a>
+    <strong>activate_automatically</strong>
     </dt>
     <dd>
     If the system should be automatically activated.

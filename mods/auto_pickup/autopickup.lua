@@ -28,7 +28,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --- A system which allows to automatically pickup items which are on the ground.
 autopickup = {
 	--- If the system should be automatically activated.
-	activate = settings.get_bool("autopickup_activate", true),
+	activate_automatically = settings.get_bool("autopickup_activate", true),
 	
 	--- If the system is active/has been activated.
 	active = false,
@@ -73,7 +73,7 @@ autopickup = {
 --- Activates the system, if it has not been disabled by setting
 -- "autopickup_activate" to false in the configuration.
 function autopickup.activate()
-	if autopickup.activate then
+	if autopickup.activate_automatically then
 		autopickup.activate_internal()
 	end
 end
