@@ -62,7 +62,7 @@ The system can be configured by adding settings to the `minetest.conf`:
     autopickup_sound_global = true
     
     # If autopickup_sound_global is set to true, defines the hearing distance,
-    # defaulst to 8.
+    # defaults to 8.
     autopickup_sound_hear_distance = 8
     
     # The name of the sound files to play, defaults to "auto_pickup".
