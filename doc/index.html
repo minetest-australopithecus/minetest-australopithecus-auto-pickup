@@ -60,6 +60,10 @@
 	<td class="summary">Activates the system, without checking the configuration.</td>
 	</tr>
 	<tr>
+	<td class="name" nowrap><a href="#has_been_collected">has_been_collected (entity)</a></td>
+	<td class="summary">Checks if the given entity has already been collected.</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#has_just_been_dropped_by">has_just_been_dropped_by (entity, player)</a></td>
 	<td class="summary">Checks if the given entity has just been dropped by the given player within
  the configured time.</td>
@@ -72,6 +76,10 @@
 	<tr>
 	<td class="name" nowrap><a href="#is_allowed">is_allowed (entity)</a></td>
 	<td class="summary">Checks if the given entity should be picked up automatically or not.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_autopickupable">is_autopickupable (entity, player)</a></td>
+	<td class="summary">Checks if the given entity can be automatically picked up.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#move_towards">move_towards (object, target_pos)</a></td>
@@ -184,6 +192,31 @@
 
 </dd>
     <dt>
+    <a name = "has_been_collected"></a>
+    <strong>has_been_collected (entity)</strong>
+    </dt>
+    <dd>
+    Checks if the given entity has already been collected.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entity</span>
+         The LuaEntity to check.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the entity has already been collected.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
     <a name = "has_just_been_dropped_by"></a>
     <strong>has_just_been_dropped_by (entity, player)</strong>
     </dt>
@@ -257,6 +290,34 @@
     <ol>
 
         true if the given entity should be picked up automatically.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "is_autopickupable"></a>
+    <strong>is_autopickupable (entity, player)</strong>
+    </dt>
+    <dd>
+    Checks if the given entity can be automatically picked up.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entity</span>
+         The LuaEntity to check.
+        </li>
+        <li><span class="parameter">player</span>
+         The Player which would like to pick it up.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the entity can be automatically picked up.
     </ol>
 
 

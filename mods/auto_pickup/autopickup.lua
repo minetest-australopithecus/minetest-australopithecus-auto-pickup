@@ -92,6 +92,14 @@ function autopickup.activate_internal()
 	end
 end
 
+--- Checks if the given entity has already been collected.
+--
+-- @param entity The LuaEntity to check.
+-- @return true if the entity has already been collected.
+function autopickup.has_been_collected(entity)
+	return entity.auto_pickup_collected == nil
+end
+
 --- Checks if the given entity has just been dropped by the given player within
 -- the configured time.
 --
@@ -109,6 +117,8 @@ end
 -- @param entity The LuaEntity to check.
 -- @return true if the given entity can be picked up automatically.
 function autopickup.has_timedout(entity)
+	print(tableutil.to_string(entity))
+	
 	return entity.autopickup_timeout == nil
 		or entity.age >= entity.autopickup_timeout
 end
@@ -119,6 +129,18 @@ end
 -- @return true if the given entity should be picked up automatically.
 function autopickup.is_allowed(entity)
 	return entity.autopickup_disable ~= true
+end
+
+--- Checks if the given entity can be automatically picked up.
+--
+-- @param entity The LuaEntity to check.
+-- @param player The Player which would like to pick it up.
+-- @return true if the entity can be automatically picked up.
+function autopickup.is_autopickupable(entity, player)
+	return autopickup.has_been_collected(entity)
+		and autopickup.is_allowed(entity)
+		and autopickup.has_timedout(entity)
+		and not autopickup.has_just_been_dropped_by(entity, player)
 end
 
 --- Moves the given object towards the given location with the given velocity.
@@ -146,11 +168,7 @@ function autopickup.pickup_items(player)
 			if entityutil.is_builtin_item(object) then
 				local entity = object:get_luaentity()
 				
-				if entity.auto_pickup_collected == nil
-					and autopickup.is_allowed(entity)
-					and not autopickup.has_just_been_dropped_by(entity, player)
-					and autopickup.has_timedout(entity) then
-					
+				if autopickup.is_autopickupable(entity, player) then
 					local stack = ItemStack(entity.itemstring)
 					
 					if target_inventory:room_for_item("main", stack) then
