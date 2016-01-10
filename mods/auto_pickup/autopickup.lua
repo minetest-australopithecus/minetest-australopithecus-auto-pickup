@@ -118,7 +118,7 @@ end
 -- @param entity The LuaEntity to check.
 -- @return true if the given entity should be picked up automatically.
 function autopickup.is_allowed(entity)
-	return entity.autopickup_disable == true
+	return entity.autopickup_disable ~= true
 end
 
 --- Moves the given object towards the given location with the given velocity.
