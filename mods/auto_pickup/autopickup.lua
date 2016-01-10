@@ -117,8 +117,6 @@ end
 -- @param entity The LuaEntity to check.
 -- @return true if the given entity can be picked up automatically.
 function autopickup.has_timedout(entity)
-	print(tableutil.to_string(entity))
-	
 	return entity.autopickup_timeout == nil
 		or entity.age >= entity.autopickup_timeout
 end
