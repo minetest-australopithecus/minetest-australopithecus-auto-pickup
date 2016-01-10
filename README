@@ -65,8 +65,8 @@ The system can be configured by adding settings to the `minetest.conf`:
     # defaults to 8.
     autopickup_sound_hear_distance = 8
     
-    # The name of the sound files to play, defaults to "auto_pickup".
-    autopickup_sound_name = auto_pickup
+    # The name of the sound files to play, defaults to "autopickup".
+    autopickup_sound_name = autopickup
 
 
 Run manually

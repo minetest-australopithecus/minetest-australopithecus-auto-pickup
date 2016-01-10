@@ -65,8 +65,8 @@ autopickup = {
 	-- defaults to 8.
 	sound_hear_distance = settings.get_number("autopickup_sound_hear_distance", 8),
 	
-	--- The name of the sound to play, defaults to "auto_pickup".
-	sound_name = settings.get_string("autopickup_sound_name", "auto_pickup")
+	--- The name of the sound to play, defaults to "autopickup".
+	sound_name = settings.get_string("autopickup_sound_name", "autopickup")
 }
 
 
@@ -97,7 +97,7 @@ end
 -- @param entity The LuaEntity to check.
 -- @return true if the entity has already been collected.
 function autopickup.has_been_collected(entity)
-	return entity.auto_pickup_collected == nil
+	return entity.autopickup_collected == nil
 end
 
 --- Checks if the given entity has just been dropped by the given player within
@@ -181,7 +181,7 @@ function autopickup.pickup_items(player)
 							
 							-- Set a property on the entity so that we don't
 							-- collect it a second time.
-							entity.auto_pickup_collected = true
+							entity.autopickup_collected = true
 							-- Let's also remove the itemstring to make sure that
 							-- this item cannot be picked up anymore.
 							entity.itemstring = ""
