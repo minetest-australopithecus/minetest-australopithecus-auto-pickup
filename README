@@ -77,6 +77,14 @@ You can run the system manually, either for all players by invoking
 `autopickup.pickup_items` with accepts the player as the single argument.
 
 
+Timed pickup
+------------
+
+The system does check the field `autopickup_timeout` if it should be picking
+up the item or not. So another mod can set `autopickup_timeout` to prevent
+an item from being picked up automatically, the set value is in seconds, and
+after the set value the item will be picked up.
+
 Force activation
 ----------------
 

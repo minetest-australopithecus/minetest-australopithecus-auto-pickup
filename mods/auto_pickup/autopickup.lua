@@ -103,6 +103,16 @@ function autopickup.has_just_been_dropped_by(entity, player)
 		and entity.age <= autopickup.dropped_min_age
 end
 
+--- Checks if the given entity has a timeout field set and if it is old enough
+-- to be picked up automatically.
+--
+-- @param entity The LuaEntity to check,
+-- @return true if the given entity can be picked up automatically.
+function autopickup.has_timedout(entity)
+	return entity.autopickup_timeout == nil
+		or entity.age >= entity.autopickup_timeout
+end
+
 --- Moves the given object towards the given location with the given velocity.
 --
 -- @param object The object to move.
@@ -129,7 +139,8 @@ function autopickup.pickup_items(player)
 				local entity = object:get_luaentity()
 				
 				if entity.auto_pickup_collected == nil
-					and not autopickup.has_just_been_dropped_by(entity, player) then
+					and not autopickup.has_just_been_dropped_by(entity, player)
+					and autopickup.has_timedout(entity) then
 					
 					local stack = ItemStack(entity.itemstring)
 					
