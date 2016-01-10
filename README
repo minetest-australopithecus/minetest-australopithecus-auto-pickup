@@ -85,6 +85,15 @@ up the item or not. So another mod can set `autopickup_timeout` to prevent
 an item from being picked up automatically, the set value is in seconds, and
 after the set value the item will be picked up.
 
+
+Disable pickup
+--------------
+
+The system does check the fields `autopickup_disable` if it should be picked up
+automatically at all. So another mode can set `autopickup_disable` to `true` to
+disable the automatic pickup for this item.
+
+
 Force activation
 ----------------
 

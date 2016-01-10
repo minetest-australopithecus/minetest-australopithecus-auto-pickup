@@ -70,6 +70,10 @@
  to be picked up automatically.</td>
 	</tr>
 	<tr>
+	<td class="name" nowrap><a href="#is_allowed">is_allowed (entity)</a></td>
+	<td class="summary">Checks if the given entity should be picked up automatically or not.</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#move_towards">move_towards (object, target_pos)</a></td>
 	<td class="summary">Moves the given object towards the given location with the given velocity.</td>
 	</tr>
@@ -220,7 +224,7 @@
     <h3>Parameters:</h3>
     <ul>
         <li><span class="parameter">entity</span>
-         The LuaEntity to check,
+         The LuaEntity to check.
         </li>
     </ul>
 
@@ -228,6 +232,31 @@
     <ol>
 
         true if the given entity can be picked up automatically.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "is_allowed"></a>
+    <strong>is_allowed (entity)</strong>
+    </dt>
+    <dd>
+    Checks if the given entity should be picked up automatically or not.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">entity</span>
+         The LuaEntity to check.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true if the given entity should be picked up automatically.
     </ol>
 
 
